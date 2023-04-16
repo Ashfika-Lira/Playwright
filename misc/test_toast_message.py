@@ -9,6 +9,6 @@ def test_toast_message(page: Page) -> None:
     toaster_msg = page.locator("div.toast-message")
     print(toaster_msg.inner_text())
 
-    # expect(toaster_msg).to_contain_text("My name is Inigo Montoya.")
+    # expect(toaster_msg).to_contain_text(None)
 
 

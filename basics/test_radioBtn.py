@@ -7,6 +7,7 @@ def test_radio_button(page: Page) -> None:
     page.locator("//label[text()='Male']/preceding-sibling::input").check(force=True)
     page.wait_for_timeout(3000)
     assert page.locator("//label[text()='Male']/preceding-sibling::input").is_checked()
+    # page.pause()
     page.locator("//label[text()='Female']/preceding-sibling::input").check(force=True)
     page.wait_for_timeout(3000)
     assert not page.locator("//label[text()='Male']/preceding-sibling::input").is_checked()

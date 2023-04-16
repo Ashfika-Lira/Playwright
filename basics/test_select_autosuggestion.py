@@ -32,3 +32,14 @@ def test_autosuggestion(page: Page) -> None:
     select_subject2(page, "Economics")
 
 
+def test_select_first_last_element(page: Page) -> None:
+    page.goto("https://demoqa.com/automation-practice-form")
+    subject_input = page.locator("#subjectsInput")
+    subject_input.fill("E")
+    subject_options = page.locator("//div[contains(@class, 'subjects-auto-complete__menu-list')]//div")
+    subject_options.first.click()
+    page.wait_for_timeout(2000)
+    subject_input.fill("E")
+    subject_options.last.click()
+    page.wait_for_timeout(2000)
+
