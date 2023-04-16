@@ -7,7 +7,7 @@ def test_example(page: Page) -> None:
     page.goto("https://selenium08.blogspot.com/2019/11/dropdown.html")
     page.locator("//select[@name='country']").select_option(label="India")
 
-    # expect(page.locator("//select[@name='country']")).to_have_value('IN')
+    expect(page.locator("//select[@name='country']")).to_have_value('IN')
     page.wait_for_timeout(2000)
     # page.locator("//select[@name='country']").select_option(value="KH")
     # page.locator("//select[@name='country']").select_option(index=5)

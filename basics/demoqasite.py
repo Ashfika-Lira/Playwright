@@ -2,10 +2,11 @@ from playwright.sync_api import Playwright, sync_playwright, expect
 
 
 def run(playwright: Playwright) -> None:
-    browser = playwright.chromium.launch(headless=False, slow_mo=3000)
+    browser = playwright.firefox.launch(headless=False, slow_mo=3000)
     context = browser.new_context()
     page = context.new_page()
     page.goto("https://demoqa.com/sortable")
+    page.wait_for_timeout(10000)
     page.get_by_role("banner").click(button="right")
     page.get_by_role("link").click()
     page.goto("https://demoqa.com/sortable")
